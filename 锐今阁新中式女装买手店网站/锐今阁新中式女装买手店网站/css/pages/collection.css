@@ -1,0 +1,275 @@
+/* Collection Page Styles */
+
+/* Season Navigation Section */
+.season-nav {
+    padding: var(--spacing-3xl) 0;
+    background-color: var(--color-background);
+}
+
+.season-nav__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-2xl);
+}
+
+.season-card {
+    position: relative;
+    height: 200px;
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform var(--duration-normal) var(--ease-out);
+}
+
+.season-card:hover {
+    transform: translateY(-8px);
+}
+
+.season-card__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+    z-index: 1;
+}
+
+.season-card__content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: var(--spacing-lg);
+}
+
+.season-card__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.7;
+    z-index: 1;
+}
+
+.season-card__title {
+    font-family: var(--font-heading);
+    font-size: var(--text-3xl);
+    margin-bottom: var(--spacing-sm);
+}
+
+.season-card__description {
+    font-size: var(--text-base);
+    max-width: 80%;
+}
+
+.season-card.is-active .season-card__background {
+    opacity: 1;
+}
+
+/* Filter Section */
+.filter-section {
+    padding: var(--spacing-2xl) 0;
+    background-color: var(--color-surface);
+    border-bottom: 1px solid var(--color-border-light);
+}
+
+.filter-section__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.filter-section__title {
+    font-family: var(--font-heading);
+    font-size: var(--text-2xl);
+    color: var(--color-primary);
+}
+
+.filter-section__content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-xl);
+}
+
+.filter-group {
+    flex: 1;
+    min-width: 100%;
+}
+
+.filter-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+}
+
+.filter-option {
+    display: flex;
+    align-items: center;
+    margin-right: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
+    cursor: pointer;
+}
+
+.filter-option input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.filter-option__box {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--color-border-dark);
+    border-radius: var(--border-radius-sm);
+    margin-right: var(--spacing-sm);
+    position: relative;
+    transition: all var(--duration-fast) var(--ease-out);
+}
+
+.filter-option input:checked + .filter-option__box {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+}
+
+.filter-option input:checked + .filter-option__box::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 5px;
+    width: 4px;
+    height: 8px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.filter-option__label {
+    font-size: var(--text-base);
+    color: var(--color-primary);
+}
+
+@media (max-width: 767px) {
+    .filter-section__content {
+        flex-direction: column;
+        gap: var(--spacing-lg);
+    }
+
+    .filter-group {
+        min-width: 100%;
+    }
+}
+
+/* Products Section */
+.products-section {
+    padding: var(--spacing-2xl) 0 var(--spacing-3xl);
+    background-color: var(--color-surface);
+}
+
+.products-section__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.products-section__title {
+    font-family: var(--font-heading);
+    font-size: var(--text-2xl);
+    color: var(--color-primary);
+}
+
+.products-section__count {
+    font-size: var(--text-base);
+    color: var(--color-secondary);
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--spacing-xl);
+}
+
+.products-section__no-results {
+    text-align: center;
+    padding: var(--spacing-3xl) 0;
+}
+
+/* Active Filters Display */
+.active-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-lg);
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid var(--color-border-light);
+}
+
+.active-filter {
+    display: flex;
+    align-items: center;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background-color: var(--color-primary);
+    color: white;
+    border-radius: var(--border-radius-full);
+    font-size: var(--text-sm);
+}
+
+.active-filter__remove {
+    margin-left: var(--spacing-xs);
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Loading State */
+.loading-state {
+    display: flex;
+    justify-content: center;
+    padding: var(--spacing-2xl) 0;
+}
+
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(44, 62, 80, 0.1);
+    border-radius: 50%;
+    border-top-color: var(--color-primary);
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Season Theme Colors */
+.spring-theme {
+    --season-color: #27ae60;
+}
+
+.summer-theme {
+    --season-color: #3498db;
+}
+
+.autumn-theme {
+    --season-color: #d35400;
+}
+
+.winter-theme {
+    --season-color: #2c3e50;
+}
+
+/* Theme Transitions */
+.theme-transition {
+    transition: background-color var(--duration-slow) var(--ease-out);
+}

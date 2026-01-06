@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>锐今阁 - 单品详情</title>
+    <meta name="description" content="锐今阁新中式女装买手店，精选单品详情，融合传统中式美学与先锋解构设计语言。">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components/navigation.css">
+    <link rel="stylesheet" href="css/components/button.css">
+    <link rel="stylesheet" href="css/components/card.css">
+    <link rel="stylesheet" href="css/pages/product-detail.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="c-navigation">
+        <div class="c-navigation__container">
+            <div class="c-navigation__brand">
+                <a href="index.html" class="c-navigation__logo">锐今阁</a>
+            </div>
+            <nav class="c-navigation__menu">
+                <ul class="c-navigation__list">
+                    <li class="c-navigation__item">
+                        <a href="index.html" class="c-navigation__link">首页</a>
+                    </li>
+                    <li class="c-navigation__item">
+                        <a href="collection.html" class="c-navigation__link">分类</a>
+                    </li>
+                    <li class="c-navigation__item">
+                        <a href="items.html" class="c-navigation__link">单品</a>
+                    </li>
+                    <li class="c-navigation__item">
+                        <a href="space.html" class="c-navigation__link">空间</a>
+                    </li>
+                </ul>
+            </nav>
+            <button class="c-navigation__toggle js-menu-toggle" aria-label="菜单切换">
+                <span class="c-navigation__toggle-line"></span>
+                <span class="c-navigation__toggle-line"></span>
+                <span class="c-navigation__toggle-line"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="product-detail">
+        <!-- Loading State -->
+        <div class="loading-state js-loading-state">
+            <div class="loading-spinner"></div>
+            <p>加载中...</p>
+        </div>
+
+        <!-- Error State -->
+        <div class="error-state js-error-state" style="display: none;">
+            <h2>加载失败</h2>
+            <p>无法加载产品信息，请返回首页重试。</p>
+            <a href="index.html" class="c-button c-button--primary">返回首页</a>
+        </div>
+
+        <!-- Product Content (dynamically loaded) -->
+        <div class="product-content js-product-content" style="display: none;">
+            <!-- Product Hero Section -->
+            <section class="product-hero">
+                <div class="container">
+                    <div class="product-hero__grid">
+                        <!-- Product Images -->
+                        <div class="product-hero__images">
+                            <div class="product-hero__main-image-container">
+                                <img src="" alt="" class="product-hero__main-image js-main-image">
+                                <div class="product-hero__image-zoom js-image-zoom"></div>
+                            </div>
+                            <div class="product-hero__thumbnail-list js-thumbnail-list">
+                                <!-- Thumbnails will be dynamically added -->
+                            </div>
+                        </div>
+
+                        <!-- Product Info -->
+                        <div class="product-hero__info">
+                            <div class="product-hero__header">
+                                <h1 class="product-hero__title js-product-title"></h1>
+                                <p class="product-hero__price js-product-price"></p>
+                            </div>
+
+                            <div class="product-hero__details">
+                                <div class="product-detail-item">
+                                    <h3 class="product-detail-item__title">季节</h3>
+                                    <p class="product-detail-item__value js-product-season"></p>
+                                </div>
+                                <div class="product-detail-item">
+                                    <h3 class="product-detail-item__title">材质</h3>
+                                    <p class="product-detail-item__value js-product-material"></p>
+                                </div>
+                                <div class="product-detail-item">
+                                    <h3 class="product-detail-item__title">剪裁</h3>
+                                    <p class="product-detail-item__value js-product-cut"></p>
+                                </div>
+                            </div>
+
+                            <div class="product-hero__description">
+                                <h3 class="product-detail-item__title">产品描述</h3>
+                                <p class="js-product-description"></p>
+                            </div>
+
+                            <div class="product-hero__actions">
+                                <button class="c-button c-button--primary js-book-appointment">预约到店试穿</button>
+                                <a href="collection.html" class="c-button c-button--outline">浏览更多</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Product Story Section -->
+            <section class="product-story">
+                <div class="container">
+                    <h2 class="section-title">设计故事</h2>
+                    <div class="story-content js-story-content">
+                        <!-- Story content will be dynamically loaded -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Material Preview Section -->
+            <section class="material-preview">
+                <div class="container">
+                    <h2 class="section-title">材质预览</h2>
+                    <div class="material-preview__container js-material-preview">
+                        <div class="material-preview__cube js-material-cube">
+                            <div class="material-preview__face material-preview__face--front"></div>
+                            <div class="material-preview__face material-preview__face--back"></div>
+                            <div class="material-preview__face material-preview__face--right"></div>
+                            <div class="material-preview__face material-preview__face--left"></div>
+                            <div class="material-preview__face material-preview__face--top"></div>
+                            <div class="material-preview__face material-preview__face--bottom"></div>
+                        </div>
+                        <div class="material-preview__instructions">
+                            <p>拖动鼠标旋转预览材质效果</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Related Products Section -->
+            <section class="related-products">
+                <div class="container">
+                    <h2 class="section-title">相关推荐</h2>
+                    <div class="related-products__grid js-related-products">
+                        <!-- Related products will be dynamically loaded -->
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__brand">
+                    <h3 class="footer__title">锐今阁</h3>
+                    <p class="footer__tagline">柔古锐今，解构新生</p>
+                </div>
+                <div class="footer__contact">
+                    <h4 class="footer__heading">联系我们</h4>
+                    <p class="footer__info">地址：北京市朝阳区三里屯路19号</p>
+                    <p class="footer__info">电话：010-88887777</p>
+                    <p class="footer__info">邮箱：contact@ruijinge.com</p>
+                </div>
+                <div class="footer__hours">
+                    <h4 class="footer__heading">营业时间</h4>
+                    <p class="footer__info">周一至周五：10:00 - 20:00</p>
+                    <p class="footer__info">周六至周日：10:00 - 21:00</p>
+                </div>
+            </div>
+            <div class="footer__copyright">
+                <p>&copy; 2025 锐今阁. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Appointment Modal -->
+    <div class="modal js-appointment-modal" style="display: none;">
+        <div class="modal__overlay js-modal-overlay"></div>
+        <div class="modal__content">
+            <button class="modal__close js-modal-close" aria-label="关闭">
+                <span></span>
+                <span></span>
+            </button>
+
+            <h2 class="modal__title">预约到店试穿</h2>
+
+            <form class="appointment-form js-appointment-form">
+                <div class="form-group">
+                    <label for="name" class="form-label">姓名</label>
+                    <input type="text" id="name" name="name" class="form-input" required>
+                    <span class="form-error js-name-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone" class="form-label">联系电话</label>
+                    <input type="tel" id="phone" name="phone" class="form-input" required>
+                    <span class="form-error js-phone-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="date" class="form-label">预约日期</label>
+                    <input type="date" id="date" name="date" class="form-input" required>
+                    <span class="form-error js-date-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="time" class="form-label">预约时间</label>
+                    <select id="time" name="time" class="form-input" required>
+                        <option value="">请选择时间</option>
+                        <option value="10:00">10:00</option>
+                        <option value="11:00">11:00</option>
+                        <option value="12:00">12:00</option>
+                        <option value="14:00">14:00</option>
+                        <option value="15:00">15:00</option>
+                        <option value="16:00">16:00</option>
+                        <option value="17:00">17:00</option>
+                        <option value="18:00">18:00</option>
+                        <option value="19:00">19:00</option>
+                    </select>
+                    <span class="form-error js-time-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="notes" class="form-label">备注</label>
+                    <textarea id="notes" name="notes" class="form-input" rows="4"></textarea>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="c-button c-button--primary">提交预约</button>
+                    <button type="button" class="c-button c-button--outline js-modal-close">取消</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <!-- 先加载数据 -->
+    <script src="js/data/products-data.js"></script>
+    <script src="js/data/categories-data.js"></script>
+    <!-- 再加载模块 -->
+    <script src="js/modules/dataLoader.js"></script>
+    <script src="js/modules/navigation.js"></script>
+    <script src="js/modules/productCard.js"></script>
+    <script src="js/modules/formHandler.js"></script>
+    <!-- 最后加载页面脚本 -->
+    <script src="js/pages/product-detail.js"></script>
+</body>
+</html>

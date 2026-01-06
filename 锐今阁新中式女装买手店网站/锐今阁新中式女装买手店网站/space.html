@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>锐今阁 - 线下空间</title>
+    <meta name="description" content="锐今阁新中式女装买手店线下空间，预约到店体验，融合传统中式美学与先锋解构设计语言。">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components/navigation.css">
+    <link rel="stylesheet" href="css/components/button.css">
+    <link rel="stylesheet" href="css/components/card.css">
+    <link rel="stylesheet" href="css/components/form.css">
+    <link rel="stylesheet" href="css/pages/space.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <header class="c-navigation">
+        <div class="c-navigation__container">
+            <div class="c-navigation__brand">
+                <a href="index.html" class="c-navigation__logo">锐今阁</a>
+            </div>
+            <nav class="c-navigation__menu">
+                <ul class="c-navigation__list">
+                    <li class="c-navigation__item">
+                        <a href="index.html" class="c-navigation__link">首页</a>
+                    </li>
+                    <li class="c-navigation__item">
+                        <a href="collection.html" class="c-navigation__link">分类</a>
+                    </li>
+                    <li class="c-navigation__item">
+                        <a href="items.html" class="c-navigation__link">单品</a>
+                    </li>
+                    <li class="c-navigation__item">
+                        <a href="space.html" class="c-navigation__link is-active">空间</a>
+                    </li>
+                </ul>
+            </nav>
+            <button class="c-navigation__toggle js-menu-toggle" aria-label="菜单切换">
+                <span class="c-navigation__toggle-line"></span>
+                <span class="c-navigation__toggle-line"></span>
+                <span class="c-navigation__toggle-line"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="space-hero">
+            <div class="space-hero__background"></div>
+            <div class="container">
+                <div class="space-hero__content">
+                    <h1 class="space-hero__title">线下空间</h1>
+                    <p class="space-hero__subtitle">欢迎莅临锐今阁，体验"柔古锐今，解构新生"的实体空间</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Space Introduction Section -->
+        <section class="space-intro">
+            <div class="container">
+                <div class="space-intro__grid">
+                    <div class="space-intro__content">
+                        <h2 class="section-title">品牌理念</h2>
+                        <div class="space-intro__text">
+                            <p>锐今阁实体空间是品牌理念的延伸，我们将"柔古锐今，解构新生"的设计哲学融入每一处细节。空间设计融合传统中式元素与现代解构主义，创造出既有文化底蕴又不失前卫感的独特体验。</p>
+                            <p>在这里，每一件服装都不仅仅是商品，更是艺术品与文化的载体。我们希望通过这个空间，让每一位访客都能感受到新中式美学的魅力，体验传统与现代的碰撞与融合。</p>
+                        </div>
+                    </div>
+                    <div class="space-intro__image">
+                        <img src="assets/image/shop/1.jpg" alt="锐今阁品牌理念" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 360° Preview Section -->
+        <section class="space-preview">
+            <div class="container">
+                <h2 class="section-title">空间预览</h2>
+                <div class="space-preview__container">
+                    <div class="space-preview__slider">
+                        <div class="space-preview__image-container">
+                            <img src="assets/image/shop/2.jpg" alt="锐今阁空间" class="space-preview__image js-preview-image" loading="lazy">
+                            <div class="space-preview__instructions">
+                                <p>拖动查看360°空间预览</p>
+                            </div>
+                        </div>
+                        <div class="space-preview__controls">
+                            <button class="space-preview__control space-preview__control--prev js-preview-prev">
+                                <svg viewBox="0 0 24 24" width="24" height="24">
+                                    <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" fill="currentColor"/>
+                                </svg>
+                            </button>
+                            <button class="space-preview__control space-preview__control--next js-preview-next">
+                                <svg viewBox="0 0 24 24" width="24" height="24">
+                                    <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" fill="currentColor"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Location Section -->
+        <section class="space-location">
+            <div class="container">
+                <h2 class="section-title">到店指引</h2>
+                <div class="space-location__grid">
+                    <div class="space-location__info">
+                        <div class="space-location__details">
+                            <h3 class="space-location__title">门店信息</h3>
+                            <div class="space-location__item">
+                                <h4 class="space-location__label">地址</h4>
+                                <p class="space-location__value">北京市朝阳区三里屯路19号</p>
+                            </div>
+                            <div class="space-location__item">
+                                <h4 class="space-location__label">电话</h4>
+                                <p class="space-location__value">010-88887777</p>
+                            </div>
+                            <div class="space-location__item">
+                                <h4 class="space-location__label">营业时间</h4>
+                                <p class="space-location__value">周一至周五：10:00 - 20:00</p>
+                                <p class="space-location__value">周六至周日：10:00 - 21:00</p>
+                            </div>
+                        </div>
+
+                        <div class="space-location__directions">
+                            <h3 class="space-location__title">诗意导航</h3>
+                            <p class="space-location__poem">三里屯，如都市中的一片绿洲，传统与现代在此交汇。沿着太古里的玻璃幕墙向北，穿过人潮与喧嚣，在19号楼的一隅，锐今阁静候您的光临。这里不仅是服装店，更是一处美学空间，一处心灵的栖息地。</p>
+                        </div>
+                    </div>
+
+                    <div class="space-location__map">
+                        <div class="map-placeholder">
+                            <p>地图加载中...</p>
+                            <!-- 这里可以集成实际的地图API -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Appointment Section -->
+        <section class="space-appointment">
+            <div class="container">
+                <h2 class="section-title">预约到店</h2>
+                <div class="appointment-container">
+                    <form class="appointment-form js-appointment-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name" class="form-label">姓名</label>
+                                <input type="text" id="name" name="name" class="form-input" required>
+                                <span class="form-error js-name-error"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone" class="form-label">联系电话</label>
+                                <input type="tel" id="phone" name="phone" class="form-input" required>
+                                <span class="form-error js-phone-error"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="date" class="form-label">预约日期</label>
+                                <input type="date" id="date" name="date" class="form-input" required>
+                                <span class="form-error js-date-error"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="time" class="form-label">预约时间</label>
+                                <select id="time" name="time" class="form-input" required>
+                                    <option value="">请选择时间</option>
+                                    <option value="10:00">10:00</option>
+                                    <option value="11:00">11:00</option>
+                                    <option value="12:00">12:00</option>
+                                    <option value="14:00">14:00</option>
+                                    <option value="15:00">15:00</option>
+                                    <option value="16:00">16:00</option>
+                                    <option value="17:00">17:00</option>
+                                    <option value="18:00">18:00</option>
+                                    <option value="19:00">19:00</option>
+                                </select>
+                                <span class="form-error js-time-error"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="notes" class="form-label">备注</label>
+                            <textarea id="notes" name="notes" class="form-input" rows="4"></textarea>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="c-button c-button--primary">提交预约</button>
+                        </div>
+                    </form>
+
+                    <div class="appointment-success js-appointment-success" style="display: none;">
+                        <div class="success-icon">
+                            <svg viewBox="0 0 24 24" width="48" height="48">
+                                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7.59l-1.41-1.41z" fill="var(--color-success)"/>
+                            </svg>
+                        </div>
+                        <h3>预约成功！</h3>
+                        <p>感谢您的预约，我们会尽快与您联系确认到店时间。</p>
+                        <button class="c-button c-button--primary js-new-appointment">再次预约</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__brand">
+                    <h3 class="footer__title">锐今阁</h3>
+                    <p class="footer__tagline">柔古锐今，解构新生</p>
+                </div>
+                <div class="footer__contact">
+                    <h4 class="footer__heading">联系我们</h4>
+                    <p class="footer__info">地址：北京市朝阳区三里屯路19号</p>
+                    <p class="footer__info">电话：010-88887777</p>
+                    <p class="footer__info">邮箱：contact@ruijinge.com</p>
+                </div>
+                <div class="footer__hours">
+                    <h4 class="footer__heading">营业时间</h4>
+                    <p class="footer__info">周一至周五：10:00 - 20:00</p>
+                    <p class="footer__info">周六至周日：10:00 - 21:00</p>
+                </div>
+            </div>
+            <div class="footer__copyright">
+                <p>&copy; 2025 锐今阁. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <!-- 先加载模块 -->
+    <script src="js/modules/navigation.js"></script>
+    <script src="js/modules/formHandler.js"></script>
+    <!-- 再加载页面脚本 -->
+    <script src="js/pages/space.js"></script>
+</body>
+</html>

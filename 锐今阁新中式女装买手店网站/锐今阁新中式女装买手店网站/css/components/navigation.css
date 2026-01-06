@@ -1,0 +1,187 @@
+/* Navigation Component */
+.c-navigation {
+    --nav-bg: rgba(255, 255, 255, 0.9);
+    --nav-link-color: var(--color-primary);
+    --nav-height: 70px;
+
+    background-color: var(--nav-bg);
+    position: sticky;
+    top: 0;
+    z-index: var(--z-sticky);
+    height: var(--nav-height);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--color-border-light);
+}
+
+.c-navigation__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.c-navigation__brand {
+    flex-shrink: 0;
+}
+
+.c-navigation__logo {
+    font-family: var(--font-heading);
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+.c-navigation__menu {
+    display: flex;
+    align-items: center;
+}
+
+.c-navigation__list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.c-navigation__item {
+    margin: 0 var(--spacing-md);
+}
+
+.c-navigation__link {
+    color: var(--nav-link-color);
+    text-decoration: none;
+    font-size: var(--text-lg);
+    font-weight: 500;
+    padding: var(--spacing-sm) var(--spacing-md);
+    position: relative;
+    overflow: hidden;
+    transition: color var(--duration-normal) var(--ease-out);
+}
+
+.c-navigation__link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-accent);
+    transition: width var(--duration-normal) var(--ease-out);
+}
+
+.c-navigation__link:hover,
+.c-navigation__link.is-active {
+    color: var(--color-accent);
+}
+
+.c-navigation__link:hover::after,
+.c-navigation__link.is-active::after {
+    width: 100%;
+}
+
+.c-navigation__toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: var(--spacing-sm);
+    z-index: var(--z-dropdown);
+}
+
+.c-navigation__toggle-line {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: var(--color-primary);
+    margin: 5px 0;
+    transition: all var(--duration-normal) var(--ease-out);
+}
+
+.c-navigation__toggle.is-active .c-navigation__toggle-line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.c-navigation__toggle.is-active .c-navigation__toggle-line:nth-child(2) {
+    opacity: 0;
+}
+
+.c-navigation__toggle.is-active .c-navigation__toggle-line:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Mobile Navigation */
+@media (max-width: 767px) {
+    .c-navigation__toggle {
+        display: block;
+    }
+
+    .c-navigation__menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 300px;
+        height: 100vh;
+        background-color: var(--color-surface);
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        transition: right var(--duration-normal) var(--ease-out);
+        overflow-y: auto;
+        z-index: var(--z-dropdown) - 1;
+    }
+
+    .c-navigation__menu.is-active {
+        right: 0;
+    }
+
+    .c-navigation__list {
+        flex-direction: column;
+        padding: var(--spacing-xl) 0;
+    }
+
+    .c-navigation__item {
+        margin: 0;
+    }
+
+    .c-navigation__link {
+        display: block;
+        padding: var(--spacing-lg) var(--spacing-xl);
+        font-size: var(--text-xl);
+    }
+
+    .c-navigation__link::after {
+        display: none;
+    }
+
+    .c-navigation__link:hover,
+    .c-navigation__link.is-active {
+        background-color: rgba(39, 174, 96, 0.1);
+        color: var(--color-accent);
+    }
+}
+
+/* Mobile Navigation Overlay */
+@media (max-width: 767px) {
+    .c-navigation::after {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity var(--duration-normal) var(--ease-out), 
+                    visibility var(--duration-normal) var(--ease-out);
+        z-index: var(--z-dropdown) - 2;
+    }
+
+    .c-navigation.is-active::after {
+        opacity: 1;
+        visibility: visible;
+    }
+}
